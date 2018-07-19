@@ -7,7 +7,7 @@ File Name :flow_graph.cpp
 
 #include <cstdio>
 #include "tbb/flow_graph.h"
-
+#include <graph.h>
 using namespace tbb::flow;
 
 struct body {
@@ -35,7 +35,7 @@ int main() {
     make_edge(b, c);
     make_edge(c, d);
     make_edge(a, e);
-
+	g.Compile()
     for (int i = 0; i < 3; ++i) {
         start.try_put(continue_msg());
         g.wait_for_all();
