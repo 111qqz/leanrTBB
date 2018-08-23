@@ -21,7 +21,7 @@ int main() {
         return msg; 
     });
 
-    tbb::flow::buffer_node< Message > ordering(g, [](const Message& msg) -> int {
+    tbb::flow::sequencer_node< Message > ordering(g, [](const Message& msg) -> int {
         return msg.id;
     });
 
